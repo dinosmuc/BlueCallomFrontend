@@ -1,0 +1,841 @@
+/* Main Layout */
+.agent-studio {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: calc(100vh - 64px);
+    background: #f8fafc;
+}
+
+/* Left Panel */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* New Saved Agents Design */
+.agent-studio-saved-list {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: fit-content;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.agent-studio-saved-list h2 {
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.agent-studio-saved-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.agent-studio-saved-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
+
+.agent-studio-saved-item:last-child {
+    margin-bottom: 0;
+}
+
+.agent-studio-saved-item:hover {
+    border-color: #0369a1;
+    transform: translateX(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: #f0f9ff;
+}
+
+.agent-studio-saved-item.selected {
+    background: #f0f9ff;
+    border-color: #0369a1;
+    color: #0369a1;
+    font-weight: 500;
+}
+
+.agent-studio-saved-item span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.agent-icon {
+    color: #0369a1;
+    font-size: 1rem;
+}
+
+.agent-studio-saved-item:hover .agent-icon {
+    color: #0284c7;
+}
+
+.agent-studio-delete-button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    margin-left: 0.5rem;
+    z-index: 1;
+}
+
+.agent-studio-delete-button:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
+/* Available Prompts Section */
+.available-prompts {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.available-prompts h3 {
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.prompts-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.prompt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #475569;
+}
+
+.prompt-item:hover {
+    border-color: #0369a1;
+    transform: translateX(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: #f0f9ff;
+}
+
+.prompt-item span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prompt-icon {
+    color: #0369a1;
+    font-size: 1rem;
+}
+
+.loop-icon {
+    color: #0369a1;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.prompt-item:hover .prompt-icon {
+    color: #0284c7;
+}
+
+/* Right Panel - Create New Agent */
+.agent-config {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.agent-config h2 {
+    color: #0f172a;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:hover,
+textarea:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    background: #ffffff;
+}
+
+/* Variables Section */
+.variables-section {
+    margin-top: 2rem;
+}
+
+.variables-section h3 {
+    color: #0f172a;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.variable-form {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.variable-input-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Variable Name Input */
+.variable-name-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.variable-name-input:hover {
+    border-color: #94a3b8;
+}
+
+.variable-name-input:focus {
+    outline: none;
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    background: #ffffff;
+}
+
+/* Variable Type Select */
+.variable-type-select {
+    min-width: 140px;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+.variable-type-select:hover {
+    border-color: #94a3b8;
+}
+
+.variable-type-select:focus {
+    outline: none;
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    background-color: #ffffff;
+}
+
+/* Empty List Checkbox */
+.empty-list-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.empty-list-checkbox {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #94a3b8;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.empty-list-checkbox:checked {
+    background: #0369a1;
+    border-color: #0369a1;
+}
+
+.empty-list-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 0.875rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.empty-list-checkbox:hover {
+    border-color: #0369a1;
+}
+
+.empty-list-label {
+    color: #475569;
+    font-size: 0.95rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Add Variable Button */
+.add-variable-button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.875rem;
+    background: #0369a1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-variable-button:hover:not(:disabled) {
+    background: #0284c7;
+    transform: translateY(-1px);
+}
+
+.add-variable-button:disabled {
+    background: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Save Agent Button */
+.save-agent-button {
+    width: 100%;
+    padding: 0.875rem;
+    margin-top: 2rem;
+    background: #0369a1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-agent-button:hover:not(:disabled) {
+    background: #0284c7;
+    transform: translateY(-1px);
+}
+
+.save-agent-button:disabled {
+    background: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Variables List */
+.variables-list {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.variable-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.variable-item:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+}
+
+.variable-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.variable-name {
+    color: #0369a1;
+    font-weight: 500;
+    font-family: 'Menlo', monospace;
+}
+
+.variable-type {
+    color: #64748b;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    background: #e2e8f0;
+    border-radius: 4px;
+}
+
+.variable-delete-button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.variable-delete-button:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
+.variable-default-value {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.variable-default-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.variable-default-input:hover {
+    border-color: #94a3b8;
+}
+
+.variable-default-input:focus {
+    outline: none;
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    background: #ffffff;
+}
+
+.variable-default {
+    color: #64748b;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    background: #f1f5f9;
+    border-radius: 4px;
+    font-family: 'Menlo', monospace;
+}
+
+/* Variable display styles for Agent Studio */
+.variables-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.variable-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.variable-item:hover {
+    background: #f1f5f9;
+}
+
+.variable-name {
+    font-family: 'Roboto Mono', monospace;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.variable-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.variable-remove {
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.variable-remove:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
+/* Style for empty state */
+.no-variables {
+    padding: 1rem;
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    background: #f8fafc;
+    border: 1px dashed #e2e8f0;
+    border-radius: 8px;
+}
+
+/* Add styles for the variable preview in workflow */
+.workflow-variable {
+    padding: 0.5rem 0.75rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #0f172a;
+    margin: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workflow-variable:hover {
+    background: #f1f5f9;
+}
+
+.workflow-variable .variable-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.workflow-variable .variable-name i {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.workflow-variable .remove-variable {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.workflow-variable:hover .remove-variable {
+    opacity: 1;
+}
+
+/* Add styles for variable type badge */
+.variable-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.5rem;
+    background: #e0f2fe;
+    color: #0284c7;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+}
+
+.variable-type-badge svg {
+    font-size: 0.7rem;
+}
+
+/* Update variable-item to accommodate the badge */
+.variable-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.variable-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Save Success Animation */
+@keyframes saveSuccess {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.save-success {
+    animation: saveSuccess 0.5s ease;
+}
+
+/* Save Button States */
+.save-agent-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.save-agent-button.saving {
+    background: #0369a1;
+    pointer-events: none;
+}
+
+.save-agent-button.saving::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 0.8s ease infinite;
+}
+
+.save-agent-button.success {
+    background: #059669;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Success Message */
+.save-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    background: #059669;
+    color: white;
+    border-radius: 8px;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.save-feedback.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.save-feedback i {
+    font-size: 1.2rem;
+}
+
+/* Add Condition Button styles */
+.add-condition-button {
+    background: #4f46e5;
+    color: white;
+    padding: 0.875rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: auto;
+}
+
+.add-condition-button:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+.add-condition-button i {
+    font-size: 0.9rem;
+}
+
+/* Modal styles for condition configuration */
+.condition-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 400px;
+}
+
+.condition-modal h3 {
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.condition-modal select,
+.condition-modal input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.condition-modal select:hover,
+.condition-modal input:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+.condition-modal select:focus,
+.condition-modal input:focus {
+    outline: none;
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    background: #ffffff;
+}
+
+.condition-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.condition-modal-buttons button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.condition-modal-buttons button:first-child {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.condition-modal-buttons button:last-child {
+    background: #4f46e5;
+    color: white;
+    border: none;
+}
+
+.condition-modal-buttons button:hover {
+    transform: translateY(-1px);
+}
+
+.condition-modal-buttons button:first-child:hover {
+    background: #e2e8f0;
+}
+
+.condition-modal-buttons button:last-child:hover {
+    background: #4338ca;
+}
